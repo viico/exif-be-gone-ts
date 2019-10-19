@@ -1,27 +1,34 @@
 {
-  "name": "exif-be-gone",
-  "version": "1.0.0",
+  "name": "exif-be-gone-ts",
+  "version": "0.0.1",
   "description": "Remove EXIF data from your image files.",
-  "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec spec/*_spec.js",
-    "lint": "standard",
-    "lintfix": "standard --fix"
+    "build": "rm -rf ExifBeGone && tsc -p .",
+    "test": "jasmine-ts --config=jasmine.json",
+    "lint": "tslint src/**/*.ts",
+    "publish-patch": "npm run build && npm --no-git-tag-version version patch && npm publish && git add . && git commit -m 'update patch' && git push ",
+    "publish-minor": "npm run build && npm version minor && npm publish",
+    "publish-major": "npm run build && npm version major && npm publish"
   },
-  "author": "Josh Hull",
+  "author": "Vico",
   "repository": {
     "type": "git",
-    "url": "https://github.com/joshbuddy/exif-be-gone.git"
+    "url": "https://github.com/viico/exif-be-gone-ts.git"
   },
   "license": "ISC",
   "devDependencies": {
-    "chai": "4.2.0",
-    "mocha": "6.1.4",
-    "standard": "12.0.1",
-    "buffer-to-stream": "1.0.0",
-    "stream-buffers": "^3.0.2"
+    "@types/jasmine": "^3.3.16",
+    "@types/node": "^11.13.18",
+    "jasmine": "^3.3.1",
+    "jasmine-ts": "^0.3.0",
+    "tslint": "^5.18.0",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.4.1"
   },
   "dependencies": {
-    "npm-check-updates": "^3.1.8"
+    "@types/lodash": "4.14.108",
+    "@types/stream-buffers": "^3.0.3",
+    "stream-buffers": "^3.0.2",
+    "ts-stream": "^2.0.1"
   }
 }
