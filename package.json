@@ -1,12 +1,12 @@
 {
   "name": "exif-be-gone-ts",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Remove EXIF data from your image files.",
   "scripts": {
     "build": "rm -rf ExifBeGone && tsc -p .",
     "test": "jasmine-ts --config=jasmine.json",
     "lint": "tslint src/**/*.ts",
-    "publish-patch": "npm run build && npm --no-git-tag-version version patch && npm publish --access public && git add . && git commit -m 'update patch' && git push ",
+    "publish-patch": "npm run build && npm --no-git-tag-version version patch && npm publish && git add . && git commit -m 'update patch' && git push ",
     "publish-minor": "npm run build && npm version minor && npm publish",
     "publish-major": "npm run build && npm version major && npm publish"
   },
