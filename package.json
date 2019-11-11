@@ -6,6 +6,7 @@
     "build": "rm -rf ExifBeGone && tsc -p .",
     "test": "jasmine-ts --config=jasmine.json",
     "lint": "tslint src/**/*.ts",
+    "example": "ts-node testing/example.ts",
     "publish-patch": "npm run build && npm --no-git-tag-version version patch && npm publish && git add . && git commit -m 'update patch' && git push ",
     "publish-minor": "npm run build && npm version minor && npm publish",
     "publish-major": "npm run build && npm version major && npm publish"
