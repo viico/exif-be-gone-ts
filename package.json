@@ -1,6 +1,6 @@
 {
   "name": "exif-be-gone-ts",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Remove EXIF data from your image files.",
   "scripts": {
     "build": "rm -rf ExifBeGone && tsc -p .",
