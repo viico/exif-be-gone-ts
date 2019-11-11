@@ -20,3 +20,14 @@ reader
     .pipe(new ExifBeGone())
     .pipe(fs.createWriteStream('out.jpg'));
 ```
+or :
+```typescript
+import {Exif} from 'exif-be-gone-ts/ExifBeGone';
+
+Exif.remove('./Canon_40D.jpg', 'out.jpg');
+```
+
+To run the example :
+```
+npm run example
+```
